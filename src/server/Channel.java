@@ -12,7 +12,6 @@ public class Channel {
     private String password;
     private boolean hasPassword;
     LinkedList<User> list = new LinkedList<User>();
-
     /**
      * Create a Channel with the given name
      * @param name  the name of the new Channel
@@ -25,7 +24,6 @@ public class Channel {
         channelName = name;
         hasPassword = true;
     }
-
     /**
      * Adds User u to the list of Users
      * @param u the User to add
@@ -148,7 +146,6 @@ public class Channel {
         }
         return returned;
     }
-
     /**
      * Returns true if username is in use, otherwise return false
      * @param username  The username to search for
