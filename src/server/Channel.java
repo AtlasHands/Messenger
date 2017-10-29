@@ -56,12 +56,11 @@ public class Channel {
      */
     public void removeUser(User user, String message)throws IOException{
         int x = 0;
-        while(x<list.size()){
-            if(list.get(x) == user){
-                list.remove(x);
+        for(User k : list){
+            if(k == user){
+                list.remove(k);
                 return;
             }
-            x++;
         }
     }
 
@@ -128,21 +127,18 @@ public class Channel {
     public String onlineList(User user){ //returns online list relative to user
         String returned = "";
         //Checks if there is only one person
-        if(list.size() == 0){
+        if(list.size() == 1){
             return "None";
         }
-        int x=0;
-        while(x<list.size()){
-            if(list.get(x).equals(user)){
-                x++;
-            }else if(x+1<list.size()){
-                returned = returned + list.get(x).Nickname + ", ";
-               x++;
+        for(int x =0;x<list.size();x++){
+            if(list.get(x) == user){
+                continue;
+            }
+            else if(x+1<list.size()){
+                returned = returned + list.get(x).Nickname + ",";
             }else{
                 returned = returned + list.get(x).Nickname;
-                x++;
             }
-            x++;
         }
         return returned;
     }

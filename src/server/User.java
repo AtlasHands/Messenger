@@ -54,8 +54,8 @@ public class User {
         }
         System.out.println("USER CONNECTED! With NickName: " + Nickname);
         out.println("Nickname:" + Nickname);
-        out.println("Currently online: " + channel.onlineList(u));
         channel.addUser(u);
+        out.println("Currently online: " + channel.onlineList(u));
         channel.sendAll("Connected: " + Nickname,u);
         sendAndRecieve();
 
