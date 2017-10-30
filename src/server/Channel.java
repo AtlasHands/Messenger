@@ -132,10 +132,10 @@ public class Channel {
         }
         for(int x =0;x<list.size();x++){
             if(list.get(x) == user){
-                continue;
+
             }
-            else if(x+1<list.size()){
-                returned = returned + list.get(x).Nickname + ",";
+            else if(x+3<=list.size()){
+                returned = returned + list.get(x).Nickname + ", ";
             }else{
                 returned = returned + list.get(x).Nickname;
             }
